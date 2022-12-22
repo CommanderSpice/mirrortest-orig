@@ -1,6 +1,7 @@
 name: Push to spring-106 mirror
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - spring-106
