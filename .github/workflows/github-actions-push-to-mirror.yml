@@ -10,12 +10,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
-        with:
-          ref: spring-106
-          fetch-depth: 0
-          persist-credentials: false
+#      - name: Checkout branch
+#        uses: actions/checkout@v3
+#        with:
+#          ref: spring-106
+#          fetch-depth: 0
+#          persist-credentials: false
+      - name: Clone branch
+        run: |
+          git clone -b spring-106 https://CommanderSpice/mirrortest-orig.git
+          cd mirrortest-orig.git
       - name: Push to mirror
         run: |
           git push --tags --atomic --force https://CommanderSpice:${{ secrets.API_TOKEN_GITHUB }}@github.com/CommanderSpice/mirrortest-mirror.git spring-106:master
