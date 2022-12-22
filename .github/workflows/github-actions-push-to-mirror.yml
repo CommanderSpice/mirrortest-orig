@@ -10,12 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-#      - name: Checkout branch
-#        uses: actions/checkout@v3
-#        with:
-#          ref: spring-106
-#          fetch-depth: 0
-#          persist-credentials: false
       - name: Clone branch
         run: |
           git clone -b spring-106 https://github.com/CommanderSpice/mirrortest-orig.git
