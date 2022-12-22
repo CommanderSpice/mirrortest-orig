@@ -18,7 +18,7 @@ jobs:
 #          persist-credentials: false
       - name: Clone branch
         run: |
-          git clone -b spring-106 https://CommanderSpice/mirrortest-orig.git
+          git clone -b spring-106 https://github.com/CommanderSpice/mirrortest-orig.git
           cd mirrortest-orig.git
       - name: Push to mirror
         run: |
