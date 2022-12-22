@@ -19,7 +19,7 @@ jobs:
       - name: Clone branch
         run: |
           git clone -b spring-106 https://github.com/CommanderSpice/mirrortest-orig.git
-          cd mirrortest-orig.git
+          cd mirrortest-orig
       - name: Push to mirror
         run: |
           git push --tags --atomic --force https://CommanderSpice:${{ secrets.API_TOKEN_GITHUB }}@github.com/CommanderSpice/mirrortest-mirror.git spring-106:master
