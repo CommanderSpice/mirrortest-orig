@@ -7,7 +7,7 @@ on:
       - 'spring-106'
 
 jobs:
-  build:
+  mirror:
     runs-on: ubuntu-latest
     steps:
       - name: Clone branch
