@@ -1,0 +1,18 @@
+name: Push to spring-106 mirror
+
+on:
+  push:
+    branches:
+      - spring-106
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+        with:
+          ref: spring-106
+      - name: Push to mirror
+        run: |
+          git push --tags --atomic --force git+ssh://github.com/CommanderSpice/mirrortest-mirror.git spring-106:master
