@@ -15,5 +15,6 @@ jobs:
         with:
           ref: spring-106
       - name: Push to mirror
+        env: API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
-          git push --tags --atomic --force git+ssh://github.com/CommanderSpice/mirrortest-mirror.git spring-106:master
+          git push --tags --atomic --force https://CommanderSpice:${API_TOKEN_GITHUB}@github.com/CommanderSpice/mirrortest-mirror.git spring-106:master
